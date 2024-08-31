@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model:Screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://wireframesketcher.com/1.0/model.ecore">
-  <widgets xsi:type="model:Browser" id="1" x="120" y="208" width="793" height="657" text="Browser&#xA;http://mopsplc.stands.advalange.com/state&#xA;" measuredWidth="793" measuredHeight="657">
+  <widgets xsi:type="model:Browser" id="1" x="312" y="24" width="793" height="657" text="Browser&#xA;http://mopsplc.stands.advalange.com/state&#xA;" measuredWidth="793" measuredHeight="657">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Table" id="3" x="148" y="368" width="737" height="201" text="Name,IP,=. State, Employee, Action&#xA;Stand 1,10.16.1.12,Busy,Ivan Ivanov, [Release]&#xA;Stand 2,11.23.45.21,Free, , [Take Up]&#xA;Stand 3,233.90.11.77,Free, , [Take Up]&#xA;Stand 4,74.29.19.44, Busy,Petr Petrov , [Release]&#xA;&#xA;" measuredWidth="737" measuredHeight="201" alternative="#eee">
+  <widgets xsi:type="model:Table" id="3" x="340" y="184" width="737" height="201" text="Name,IP,=. State, Employee, Action&#xA;Stand 1,10.16.1.12,Busy,Ivan Ivanov, [Release]&#xA;Stand 2,11.23.45.21,Free, , [Take Up]&#xA;Stand 3,233.90.11.77,Free, , [Take Up]&#xA;Stand 4,74.29.19.44, Busy,Petr Petrov , [Release]&#xA;&#xA;" measuredWidth="737" measuredHeight="201" alternative="#eee">
     <font/>
     <items x="606" y="24" width="39" height="15" text="Release"/>
     <items x="606" y="45" width="41" height="15" text="Take Up"/>
     <items x="606" y="66" width="41" height="15" text="Take Up"/>
     <items x="606" y="87" width="39" height="15" text="Release"/>
   </widgets>
-  <widgets xsi:type="model:Label" id="8" x="148" y="312" width="309" text="Состояние стендов МОПС ПЛК" measuredWidth="309" measuredHeight="36">
+  <widgets xsi:type="model:Label" id="8" x="340" y="128" width="309" text="Состояние стендов МОПС ПЛК" measuredWidth="309" measuredHeight="36">
     <font size="20px"/>
   </widgets>
-  <widgets xsi:type="model:Menu" id="20" x="148" y="270" width="165" text="Stands, State, Employees" measuredWidth="165" measuredHeight="27">
+  <widgets xsi:type="model:Menu" id="20" x="340" y="86" width="165" text="Stands, State, Employees" measuredWidth="165" measuredHeight="27">
     <items x="5" y="0" width="46" height="27" text="Stands"/>
     <items x="51" y="0" width="37" height="27" text="State"/>
     <items x="88" y="0" width="68" height="27" text="Employees"/>
