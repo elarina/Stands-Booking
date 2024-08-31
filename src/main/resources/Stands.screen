@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://wireframesketcher.com/1.0/model.ecore">
+  <widgets xsi:type="model:Browser" id="1" x="88" y="96" width="793" height="657" text="Browser&#xA;http://mopsplc.stands.advalange.com/stands&#xA;&#xA;" measuredWidth="793" measuredHeight="657">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Table" id="2" x="116" y="256" width="737" height="201" text="Name,IP,=. Username, Password, Action&#xA;Stand 1,10.16.1.12,user,pwd, [Remove]&#xA;Stand 2,11.23.45.21,user1,pwd1, [Remove] &#xA;Stand 3,233.90.11.77,user2, pwd2, [Remove]&#xA;Stand 4,74.29.19.44, user3,pwd3, [Remove]&#xA;&#xA;&#xA;" measuredWidth="737" measuredHeight="201" alternative="#eee">
+    <font/>
+    <items x="603" y="24" width="43" height="15" text="Remove"/>
+    <items x="603" y="45" width="43" height="15" text="Remove"/>
+    <items x="603" y="66" width="43" height="15" text="Remove"/>
+    <items x="603" y="87" width="43" height="15" text="Remove"/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="3" x="116" y="200" width="269" text="MOPS PLC STANDS" measuredWidth="269" measuredHeight="36">
+    <font size="20px"/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="4" x="672" y="216" width="177" text="Add Stand" measuredWidth="177" measuredHeight="25">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Menu" id="5" x="116" y="158" width="165" text="Stands, State, Employees" measuredWidth="165" measuredHeight="27">
+    <items x="5" y="0" width="46" height="27" text="Stands"/>
+    <items x="51" y="0" width="37" height="27" text="State"/>
+    <items x="88" y="0" width="68" height="27" text="Employees"/>
+  </widgets>
+  <hRuler/>
+  <vRuler/>
+  <font size="12px"/>
+</model:Screen>
