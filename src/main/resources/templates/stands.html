@@ -7,14 +7,20 @@
 <body>
 	<br><br><br>
 	
-	<table width="100%" border="1" align="center">
+	<table width="80%" border="1" align="center">
       <tr>
-        <th>Name</th>
-        <th>IP</th>
+        <th width="20%">Название</th>
+        <th width="20%">IP</th>
+        <th width="20%">Имя пользователя</th>
+        <th width="20%">Пароль</th>
+        <th width="20%">Действие</th>
       </tr>
       <tr th:each="record : ${stands}">
-        <td align="center" th:text="${record.name}">Test</td>
-        <td align="center" th:text="${record.ip}">12-09-2021</td>
+        <td align="center" th:text="${record.name}"></td>
+        <td align="center" th:text="${record.ip}"></td>
+        <td align="center" th:text="${record.username}"></td>
+        <td align="center" th:text="${record.password}"></td>
+        <td align="center"> <button>Remove</button></td>
       </tr>
     </table>
 	

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://wireframesketcher.com/1.0/model.ecore">
+  <widgets xsi:type="model:Browser" id="1" x="88" y="88" width="793" height="657" text="Browser&#xA;http://mopsplc.stands.advalange.com/stands&#xA;&#xA;" measuredWidth="793" measuredHeight="657">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Table" id="2" x="116" y="248" width="737" height="201" text=",Имя&#xA;[x],Иван Иванов&#xA;[],Петр Петров&#xA;[],Степан Степанов&#xA;&#xA;&#xA;&#xA;" measuredWidth="737" measuredHeight="201" alternative="#eee">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="3" x="116" y="192" width="269" text="Сотрудники МОПС ПЛК" measuredWidth="269" measuredHeight="36">
+    <font size="20px"/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="4" x="672" y="208" width="177" text="Добавить сотрудника" measuredWidth="177" measuredHeight="25">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Menu" id="5" x="116" y="160" width="733" text="Стенды, Состояние, Сотрудники" measuredWidth="733" measuredHeight="27">
+    <items x="5" y="0" width="52" height="27" text="Стенды"/>
+    <items x="57" y="0" width="70" height="27" text="Состояние"/>
+    <items x="127" y="0" width="77" height="27" text="Сотрудники"/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="6" x="600" y="464" text="Сбросить выбор" measuredWidth="112" measuredHeight="25">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="7" x="724" y="464" text="Удалить выбранное" measuredWidth="129" measuredHeight="25">
+    <font/>
+  </widgets>
+  <hRuler/>
+  <vRuler/>
+  <font size="12px"/>
+</model:Screen>
