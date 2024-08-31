@@ -1,0 +1,17 @@
+[
+  {
+    "_class": "com.advalange.entities.Employee",
+    "name" : "Lara",
+    "dept"  : "IT"
+  },
+  {
+    "_class": "com.advalange.entities.Employee",
+    "name" : "Wayne",
+    "dept"  : "Admin"
+  },
+  {
+    "_class": "com.advalange.entities.Employee",
+    "name" : "Mira",
+    "dept"  : "Sales"
+  }
+]
