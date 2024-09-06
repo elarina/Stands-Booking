@@ -3,34 +3,25 @@
   <widgets xsi:type="model:Browser" id="1" x="312" y="24" width="793" height="657" text="Browser&#xA;http://mopsplc.stands.advalange.com/state&#xA;" measuredWidth="793" measuredHeight="657">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Table" id="3" x="340" y="184" width="737" height="201" text="Name,IP,=. State, Employee, Action&#xA;Stand 1,10.16.1.12,Busy,Ivan Ivanov, [Release]&#xA;Stand 2,11.23.45.21,Free, , [Take Up]&#xA;Stand 3,233.90.11.77,Free, , [Take Up]&#xA;Stand 4,74.29.19.44, Busy,Petr Petrov , [Release]&#xA;&#xA;" measuredWidth="737" measuredHeight="201" alternative="#eee">
+  <widgets xsi:type="model:Table" id="3" x="340" y="184" width="737" height="201" text="Name,IP,=. State, Employee, Action&#xA;Stand 1,10.16.1.12,Busy,Иван Иванов, [Release]&#xA;Stand 2,11.23.45.21,Free, , [Take Up]&#xA;Stand 3,233.90.11.77,Free, , [Take Up]&#xA;Stand 4,74.29.19.44, Busy,Петр Петров , [Release]&#xA;&#xA;" measuredWidth="737" measuredHeight="201" alternative="#eee">
     <font/>
-    <items x="606" y="24" width="39" height="15" text="Release"/>
-    <items x="606" y="45" width="41" height="15" text="Take Up"/>
-    <items x="606" y="66" width="41" height="15" text="Take Up"/>
-    <items x="606" y="87" width="39" height="15" text="Release"/>
+    <items x="611" y="24" width="39" height="15" text="Release"/>
+    <items x="611" y="45" width="41" height="15" text="Take Up"/>
+    <items x="611" y="66" width="41" height="15" text="Take Up"/>
+    <items x="611" y="87" width="39" height="15" text="Release"/>
   </widgets>
   <widgets xsi:type="model:Label" id="8" x="340" y="128" width="309" text="Состояние стендов МОПС ПЛК" measuredWidth="309" measuredHeight="36">
     <font size="20px"/>
   </widgets>
-  <widgets xsi:type="model:Menu" id="20" x="340" y="86" width="165" text="Stands, State, Employees" measuredWidth="165" measuredHeight="27">
-    <items x="5" y="0" width="46" height="27" text="Stands"/>
-    <items x="51" y="0" width="37" height="27" text="State"/>
-    <items x="88" y="0" width="68" height="27" text="Employees"/>
+  <widgets xsi:type="model:Menu" id="20" x="340" y="86" width="349" text="Текущее состояние, Бронирование, Администрирование" measuredWidth="349" measuredHeight="27">
+    <items x="5" y="0" width="118" height="27" text="Текущее состояние"/>
+    <items x="123" y="0" width="92" height="27" text="Бронирование"/>
+    <items x="215" y="0" width="126" height="27" text="Администрирование"/>
   </widgets>
-  <widgets xsi:type="model:Window" id="23" x="280" y="960" height="201" text="Take Up" measuredWidth="400" measuredHeight="201"/>
-  <widgets xsi:type="model:Combo" id="24" x="440" y="1037" width="184" text="Ivan Ivanov" measuredWidth="184" measuredHeight="23">
+  <widgets xsi:type="model:Label" id="28" x="1001" y="88" text="Петр Петров" measuredWidth="76" measuredHeight="23">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Label" id="25" x="344" y="1037" width="105" text="Choose yourself:" measuredWidth="105" measuredHeight="23">
-    <font/>
-  </widgets>
-  <widgets xsi:type="model:Button" id="26" x="514" y="1120" text="OK" measuredWidth="36" measuredHeight="25">
-    <font/>
-  </widgets>
-  <widgets xsi:type="model:Button" id="27" x="570" y="1120" width="54" text="Cancel" measuredWidth="54" measuredHeight="25">
-    <font/>
-  </widgets>
+  <widgets xsi:type="model:Icon" id="29" x="960" y="84" measuredWidth="32" measuredHeight="32" icon="smile (large)"/>
   <hRuler/>
   <vRuler/>
   <font size="12px"/>

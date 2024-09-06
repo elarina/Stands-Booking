@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://wireframesketcher.com/1.0/model.ecore">
+  <widgets xsi:type="model:Browser" id="1" x="280" y="104" width="590" height="476" text="Browser&#xA;http://mopsplc.stands.advalange.com" measuredWidth="590" measuredHeight="476">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:TextField" id="2" x="536" y="308" width="121" text="Петр Петров" measuredWidth="121" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:TextField" id="3" x="536" y="344" width="121" text="********" measuredWidth="121" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="4" x="473" y="308" text="Логин:" measuredWidth="43" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="5" x="469" y="344" text="Пароль:" measuredWidth="51" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="6" x="518" y="248" text="Добро пожаловать!" measuredWidth="114" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="7" x="604" y="400" text="Войти" measuredWidth="53" measuredHeight="25">
+    <font/>
+  </widgets>
+  <hRuler/>
+  <vRuler/>
+  <font size="12px"/>
+</model:Screen>

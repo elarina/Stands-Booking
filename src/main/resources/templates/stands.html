@@ -1,28 +1,33 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
-<head> 
-    <title>Weather Project</title> 
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<head>
+<title>Weather Project</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-	<br><br><br>
-	
+	<br>
+	<br>
+	<br>
+	<form th:action="@{?removeStand}" method="post" >
 	<table width="80%" border="1" align="center">
-      <tr>
-        <th width="20%">Название</th>
-        <th width="20%">IP</th>
-        <th width="20%">Имя пользователя</th>
-        <th width="20%">Пароль</th>
-        <th width="20%">Действие</th>
-      </tr>
-      <tr th:each="record : ${stands}">
-        <td align="center" th:text="${record.name}"></td>
-        <td align="center" th:text="${record.ip}"></td>
-        <td align="center" th:text="${record.username}"></td>
-        <td align="center" th:text="${record.password}"></td>
-        <td align="center"> <button>Remove</button></td>
-      </tr>
-    </table>
+		<tr>
+			<th width="5%">Выбрать</th>
+			<th width="25%">Название</th>
+			<th width="25%">IP</th>
+			<th width="25%">Имя пользователя</th>
+			<th width="20%">Пароль</th>
+
+		</tr>
+		<tr th:each="stand: ${stands}">
+			<td align="center"><input type="checkbox" name="stand_ids" th:value="${stand.id}"/></td>
+			<td align="center" th:text="${stand.name}"></td>
+			<td align="center" th:text="${stand.ip}"></td>
+			<td align="center" th:text="${stand.username}"></td>
+			<td align="center" th:text="${stand.password}"></td>
+		</tr>
+	</table>
+	<button type="submit">Удалить</button>
+	</form>
 	
 	
 </body>

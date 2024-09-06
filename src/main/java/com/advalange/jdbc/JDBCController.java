@@ -38,17 +38,18 @@ public class JDBCController {
 	public List<Stand> queryStands() {
 		List<Stand> stands = new ArrayList<Stand>();
 		
-		String sql = "SELECT name, ip, username, password, busy FROM stands";
+		String sql = "SELECT id, name, ip, username, password, busy FROM stands";
 				
 		List<Map<String, Object>> records = jdbcTemplate.queryForList(sql);
 		
 		for(Map<String, Object> record: records) {
+			int id = (int)record.get("id");
 			String name = (String)record.get("name");
 			String ip = (String)record.get("ip");
 			String username = (String)record.get("username");
 			String password = (String) record.get("password");
 		    boolean busy = (boolean) record.get("busy");
-			stands.add(new Stand(name, ip, username, password, busy));
+			stands.add(new Stand(id, name, ip, username, password, busy));
 		}
 	
 		return stands;
