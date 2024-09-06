@@ -54,4 +54,14 @@ public class JDBCController {
 	
 		return stands;
 	}
+	
+	public void removeStands(int[] ids) {
+		String idsStr = "";
+		for (int i = 0; i < ids.length - 1; i++) {
+			idsStr = i + ", ";
+		}
+		idsStr += ids[ids.length - 1];
+		String sql = "DELETE FROM stands where id in("+ idsStr +") ";
+		jdbcTemplate.update(sql);
+	}
 }

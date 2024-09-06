@@ -40,9 +40,14 @@ public class StandsPageController {
 
 	@PostMapping(value = "/stands", params = "removeStand")
 	public String removeStand(@RequestParam(value = "stand_ids", required = false) int[] cers, Model model) {
+		if(cers == null) {
+			return "redirect:/stands";
+		}		
 		for (int i : cers) {
 			System.out.println(i);
 		}
+		
+		controller.removeStands(cers);
 		
 		return "redirect:/stands";
 	}

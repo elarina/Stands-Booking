@@ -3,13 +3,14 @@
 <head>
 <title>Weather Project</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link type="text/css" rel="stylesheet" href="stands.css">
 </head>
 <body>
 	<br>
 	<br>
 	<br>
 	<form th:action="@{?removeStand}" method="post" >
-	<table width="80%" border="1" align="center">
+	<table style="width:80%;"border="1" align="center">
 		<tr>
 			<th width="5%">Выбрать</th>
 			<th width="25%">Название</th>
@@ -26,7 +27,7 @@
 			<td align="center" th:text="${stand.password}"></td>
 		</tr>
 	</table>
-	<button type="submit">Удалить</button>
+	<button style="margin-top:10px;margin-left: 85%;" type="submit">Удалить</button>
 	</form>
 	
 	
