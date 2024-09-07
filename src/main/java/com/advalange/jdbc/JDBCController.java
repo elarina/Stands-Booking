@@ -1,11 +1,9 @@
 package com.advalange.jdbc;
 
-import java.lang.reflect.Array;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
@@ -29,14 +27,15 @@ public class JDBCController {
 	public List<Employee> queryTowns() {
 		List<Employee> employees = new ArrayList<Employee>();
 
-		String sql = "SELECT name, lastname FROM employee";
+		String sql = "SELECT id, name, lastname FROM employees";
 
 		List<Map<String, Object>> records = jdbcTemplate.queryForList(sql);
 
 		for (Map<String, Object> record : records) {
+			Long id = (Long)record.get("id");
 			String name = (String) record.get("name");
 			String lastname = (String) record.get("lastname");
-			employees.add(new Employee(name, lastname));
+			employees.add(new Employee(id, name, lastname));
 		}
 
 		return employees;
@@ -61,9 +60,39 @@ public class JDBCController {
 
 		return stands;
 	}
+	
+	public List<Employee> queryEmployees() {
+		List<Employee> employees = new ArrayList<Employee>();
+
+		String sql = "SELECT id, firstname, lastname FROM employees;";
+
+		List<Map<String, Object>> records = jdbcTemplate.queryForList(sql);
+
+		for (Map<String, Object> record : records) {
+			int id = (int) record.get("id");
+			String name = (String) record.get("firstname");
+			String lastname = (String) record.get("lastname");
+			employees.add(new Employee(id, name, lastname));
+		}
+
+		return employees;
+	}
+
 
 	public void removeStand(int id) {
 		String sql = "DELETE FROM stands where id = ?;";
+		try {
+			Connection connection = dataSource.getConnection();
+			PreparedStatement statement = connection.prepareStatement(sql);
+			statement.setInt(1, id);
+			statement.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void removeEmployee(int id) {
+		String sql = "DELETE FROM employees where id = ?;";
 		try {
 			Connection connection = dataSource.getConnection();
 			PreparedStatement statement = connection.prepareStatement(sql);
@@ -85,6 +114,22 @@ public class JDBCController {
 			statement.setString(3, stand.getUsername());
 			statement.setString(4, stand.getPassword());
 			statement.setBoolean(5, stand.getBusy());
+			statement.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+	
+	public void addEmployee(Employee employee) {
+		Connection connection;
+		try {
+			connection = dataSource.getConnection();
+			PreparedStatement statement = connection.prepareStatement(
+					"INSERT INTO employees (firstname, lastname) values (?, ?);");
+			statement.setString(1, employee.getName());
+			statement.setString(2, employee.getLastname());
 			statement.executeUpdate();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

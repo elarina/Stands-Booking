@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="menu.css"/>
 </head>
 <body>
-<h1>Добавление стенда</h1>
+<h1>Добавление сотрудника</h1>
 
 <div class="navbar">
   <a href="#">Текущее состояние</a>
@@ -22,26 +22,18 @@
   </div> 
 </div>
 	<br/><br/><br/><br/>
-	<form th:action="@{/addStand}" method="post" th:object="${stand}">
+	<form th:action="@{/addEmployee}" method="post" th:object="${employee}">
 		<div  style = "margin-left: calc(50% - 500px); width: 500px; clear: both;">
-		<label style="margin-left: 40%;" for="name">Название: </label>
+		<label style="margin-left: 40%;" for="name">Имя: </label>
      	<input style="width: 100%; clear: both;" type="text" th:field="*{name}"/>
      	<br/><br/>
-     	<label style="margin-left: 40%;" for="ip">IP-адрес: </label>
-     	<input style="width: 100%; clear: both;" type="text" th:field="*{ip}"/>
-     	<br/><br/>
-     	<label style="margin-left: 40%;" for="username">Имя пользователя: </label>
-     	<input style="width: 100%; clear: both;" type="text" th:field="*{username}"/>
-     	<br/><br/>
-     	<label style="margin-left: 40%;" for="password">Пароль: </label>
-     	<input style="width: 100%; clear: both;" type="text" th:field="*{password}"/>
-     	<br/><br/>
-     	<label style="margin-left: 40%;" for="busy">Состояние: </label>
-     	<input style="width: 100%; clear: both;" type="text" th:field="*{busy}"/>
-		<br/><br/>
+     	<label style="margin-left: 40%;" for="lastname">Фамилия: </label>
+     	<input style="width: 100%; clear: both;" type="text" th:field="*{lastname}"/>
+
 		</div>
+		<br/><br/>
 		<div>
-			<button style="margin-left: 40%; margin-bottom: 10px;">Добавить стенд</button>
+			<button style="margin-left: 40%; margin-bottom: 10px;">Добавить сотрудника</button>
 			<button style="margin-top: 10px; margin-left: 10px;" type="submit"
 				name="cancel" value="Cancel">Отмена</button>
 		</div>

@@ -1,11 +1,23 @@
 package com.advalange.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+@Entity
 public class Employee {
-	private final String name;
-	private final String lastname;
+	private String name;
+	private String lastname;
 	
-	public Employee(String name, String lastname) {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	
+	public Employee() {}
+	
+	public Employee(long id, String name, String lastname) {
 		super();
+		this.id = id;
 		this.name = name;
 		this.lastname = lastname;
 	}
@@ -17,6 +29,23 @@ public class Employee {
 	public String getLastname() {
 		return lastname;
 	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public void setLastname(String lastname) {
+		this.lastname = lastname;
+	}
+	
 	
 	
 }

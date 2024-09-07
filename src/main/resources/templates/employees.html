@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>MOPS PLC Stands</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link type="text/css" rel="stylesheet" href="menu.css">
+</head>
+<body>
+<h1>Стенды МОПС ПЛК</h1>
+
+<div class="navbar">
+  <a href="#">Текущее состояние</a>
+  <a href="#">Бронирование</a>
+  <div class="dropdown">
+    <button class="dropbtn"> Администрирование 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="/stands">Стенды</a>
+      <a href="/employees">Сотрудники</a>
+    </div>
+  </div> 
+</div>
+	<br/><br/><br/><br/>
+	<form th:action="@{/addEmployee?add}" method="get">
+		<button style="width:150px;margin-bottom:10px;margin-left:calc(75% - 150px);">Добавить сотрудника</button>
+	</form>
+	<form th:action="@{?removeEmployee}" method="post" >
+	<table style="width:50%;"border="1" align="center">
+		<tr>
+			<th width="5%">Выбрать</th>
+			<th width="20%">Имя</th>
+			<th width="25%">Фамилия</th>
+	
+		</tr>
+		<tr th:each="employee: ${employees}">
+			<td align="center"><input type="checkbox" name="employee_ids" th:value="${employee.id}"/></td>
+			<td align="center" th:text="${employee.name}"></td>
+			<td align="center" th:text="${employee.lastname}"></td>
+		</tr>
+	</table>
+	<button style="margin-top:10px;margin-left: 45%;" type="submit" name="cancel" value="Cancel">Сбросить выбор</button> <button style="margin-left: 10px;" type="submit" name="delete" value="Delete">Удалить выбранные</button>
+
+	</form>
+	
+</body>
+</html>
