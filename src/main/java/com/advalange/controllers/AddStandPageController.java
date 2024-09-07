@@ -30,7 +30,7 @@ public class AddStandPageController {
 	}
 	
 	@PostMapping(value = "/addStand", params = "cancel")
-	public String cancelAddStand(Model model) {
-		return "addStand";
+	public String cancelAddStand(@ModelAttribute Stand stand, Model model) {
+		return "redirect:/addStand";
 	}
 }
