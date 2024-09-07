@@ -6,7 +6,7 @@
 <link type="text/css" rel="stylesheet" href="menu.css">
 </head>
 <body>
-<h1>Стенды МОПС ПЛК</h1>
+<h1>Сотрудники МОПС ПЛК</h1>
 
 <div class="navbar">
   <a href="#">Текущее состояние</a>
@@ -30,13 +30,10 @@
 		<tr>
 			<th width="5%">Выбрать</th>
 			<th width="20%">Имя</th>
-			<th width="25%">Фамилия</th>
-	
 		</tr>
 		<tr th:each="employee: ${employees}">
 			<td align="center"><input type="checkbox" name="employee_ids" th:value="${employee.id}"/></td>
-			<td align="center" th:text="${employee.name}"></td>
-			<td align="center" th:text="${employee.lastname}"></td>
+			<td align="center" th:text="${employee.name} +' ' + ${employee.lastname}"></td>
 		</tr>
 	</table>
 	<button style="margin-top:10px;margin-left: 45%;" type="submit" name="cancel" value="Cancel">Сбросить выбор</button> <button style="margin-left: 10px;" type="submit" name="delete" value="Delete">Удалить выбранные</button>
