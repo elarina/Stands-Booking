@@ -33,22 +33,29 @@ public class StandsPageController {
 //		model.addAttribute("ip", stands.stream().map(Stand::getIp).toList());
 	}
 
-	@PostMapping(value = "/stands", params = "addStand")
-	public void addStand(Model model) {
-
+	@PostMapping(value = "/addStand")
+	public String addStand(Model model) {
+		return "addStand";
 	}
 
-	@PostMapping(value = "/stands", params = "removeStand")
+	@PostMapping(value = "/stands", params = "delete")
 	public String removeStand(@RequestParam(value = "stand_ids", required = false) int[] cers, Model model) {
-		if(cers == null) {
+		System.out.println("delete");
+		if (cers == null) {
 			return "redirect:/stands";
-		}		
+		}
 		for (int i : cers) {
 			System.out.println(i);
 		}
-		
+
 		controller.removeStands(cers);
-		
+
+		return "redirect:/stands";
+	}
+
+	@PostMapping(value = "/stands", params = "cancel")
+	public String cancelRemove(Model model) {
+		System.out.println("cancel");
 		return "redirect:/stands";
 	}
 

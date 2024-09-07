@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<title>Weather Project</title>
+<title>MOPS PLC Stands</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link type="text/css" rel="stylesheet" href="stands.css">
 </head>
@@ -9,6 +9,9 @@
 	<br>
 	<br>
 	<br>
+	<form th:action="@{/addStand}" method="post">
+		<button style="width:120px;margin-bottom:10px;margin-left:calc(90% - 120px);">Добавить стенд</button>
+	</form>
 	<form th:action="@{?removeStand}" method="post" >
 	<table style="width:80%;"border="1" align="center">
 		<tr>
@@ -27,9 +30,9 @@
 			<td align="center" th:text="${stand.password}"></td>
 		</tr>
 	</table>
-	<button style="margin-top:10px;margin-left: 85%;" type="submit">Удалить</button>
+	<button style="margin-top:10px;margin-left: 40%;" type="submit" name="cancel" value="Cancel">Сбросить выбор</button> <button style="margin-left: 10px;" type="submit" name="delete" value="Delete">Удалить выбранные</button>
+
 	</form>
-	
 	
 </body>
 </html>
