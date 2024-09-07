@@ -75,13 +75,12 @@ public class JDBCController {
 		try {
 			connection = dataSource.getConnection();
 			PreparedStatement statement = connection.prepareStatement(
-					"INSERT INTO stands (id, name, ip, username, password, busy) values (?, ?, ?, ?, ?, ?);");
-			statement.setInt(1, stand.getId());
-			statement.setString(2, stand.getName());
-			statement.setString(3, stand.getIp());
-			statement.setString(4, stand.getUsername());
-			statement.setString(5, stand.getPassword());
-			statement.setBoolean(6, stand.getBusy());
+					"INSERT INTO stands (name, ip, username, password, busy) values (?, ?, ?, ?, ?);");
+			statement.setString(1, stand.getName());
+			statement.setString(2, stand.getIp());
+			statement.setString(3, stand.getUsername());
+			statement.setString(4, stand.getPassword());
+			statement.setBoolean(5, stand.getBusy());
 			statement.executeUpdate();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

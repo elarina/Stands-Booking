@@ -33,11 +33,6 @@ public class StandsPageController {
 //		model.addAttribute("ip", stands.stream().map(Stand::getIp).toList());
 	}
 
-	@PostMapping(value = "/addStand")
-	public String addStand(Model model) {
-		return "addStand";
-	}
-
 	@PostMapping(value = "/stands", params = "delete")
 	public String removeStand(@RequestParam(value = "stand_ids", required = false) int[] cers, Model model) {
 		System.out.println("delete");
