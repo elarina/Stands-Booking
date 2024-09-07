@@ -1,9 +1,11 @@
 package com.advalange.jdbc;
 
+import java.lang.reflect.Array;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
@@ -60,14 +62,16 @@ public class JDBCController {
 		return stands;
 	}
 
-	public void removeStands(int[] ids) {
-		String idsStr = "";
-		for (int i = 0; i < ids.length - 1; i++) {
-			idsStr = i + ", ";
+	public void removeStand(int id) {
+		String sql = "DELETE FROM stands where id = ?;";
+		try {
+			Connection connection = dataSource.getConnection();
+			PreparedStatement statement = connection.prepareStatement(sql);
+			statement.setInt(1, id);
+			statement.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
 		}
-		idsStr += ids[ids.length - 1];
-		String sql = "DELETE FROM stands where id in(" + idsStr + ");";
-		jdbcTemplate.update(sql);
 	}
 
 	public void addStand(Stand stand) {
