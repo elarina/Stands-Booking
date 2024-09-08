@@ -18,29 +18,26 @@ public class Stand {
 	private String ip;
 	private String username;
 	private String password;
-	private boolean busy;
 	
 	public Stand() {
 		
 	}
 	
-	public Stand(String name, String ip, String username, String password, boolean busy) {
+	public Stand(String name, String ip, String username, String password) {
 		super();
 		this.name = name;
 		this.ip = ip;
 		this.username = username;
 		this.password = password;
-		this.busy = busy;
 	}
 	
-	public Stand(int id, String name, String ip, String username, String password, boolean busy) {
+	public Stand(int id, String name, String ip, String username, String password) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.ip = ip;
 		this.username = username;
 		this.password = password;
-		this.busy = busy;
 	}
 
 	public long getId() {
@@ -65,11 +62,6 @@ public class Stand {
 	public String getPassword() {
 		return password;
 	}
-
-
-	public boolean getBusy() {
-		return busy;
-	}
 	
 	public void setName(String name) {
 		this.name = name;
@@ -85,10 +77,6 @@ public class Stand {
 
 	public void setPassword(String password) {
 		this.password = password;
-	}
-
-	public void setBusy(boolean busy) {
-		this.busy = busy;
 	}
 	
 	

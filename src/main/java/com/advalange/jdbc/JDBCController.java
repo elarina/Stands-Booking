@@ -22,7 +22,7 @@ public class JDBCController {
 	public List<Stand> queryStands() {
 		List<Stand> stands = new ArrayList<Stand>();
 
-		String sql = "SELECT id, name, ip, username, password, busy FROM stands;";
+		String sql = "SELECT id, name, ip, username, password FROM stands;";
 
 		Connection connection = null;
 		PreparedStatement statement = null;
@@ -37,8 +37,7 @@ public class JDBCController {
 				String ip = rs.getString(3);
 				String username = rs.getString(4);
 				String password = rs.getString(5);
-				boolean busy = rs.getBoolean(6);
-				stands.add(new Stand(id, name, ip, username, password, busy));
+				stands.add(new Stand(id, name, ip, username, password));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -76,7 +75,7 @@ public class JDBCController {
 
 	public List<Employee> queryEmployees() {
 		List<Employee> employees = new ArrayList<Employee>();
-		String sql = "SELECT id, firstname, lastname FROM employees;";
+		String sql = "SELECT id, name, lastname FROM employees;";
 		Connection connection = null;
 		PreparedStatement statement = null;
 		ResultSet rs = null;
@@ -133,10 +132,18 @@ public class JDBCController {
 	}
 
 	public void removeStand(int id) {
+		String sql_statuses =  "DELETE from statuses where FK_stands = ?";
 		String sql = "DELETE FROM stands where id = ?;";
+		PreparedStatement statementStatuses = null;
+		Connection connectionStatuses = null;
 		PreparedStatement statement = null;
 		Connection connection = null;
 		try {
+			connectionStatuses = dataSource.getConnection();
+			statementStatuses = connectionStatuses.prepareStatement(sql_statuses);
+			statementStatuses.setInt(1, id);
+			statementStatuses.executeUpdate();
+			
 			connection = dataSource.getConnection();
 			statement = connection.prepareStatement(sql);
 			statement.setInt(1, id);
@@ -155,6 +162,21 @@ public class JDBCController {
 			if (connection != null) {
 				try {
 					connection.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+			if (statementStatuses != null) {
+				try {
+					statementStatuses.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+
+			if (connectionStatuses != null) {
+				try {
+					connectionStatuses.close();
 				} catch (SQLException e) {
 					e.printStackTrace();
 				}
@@ -163,10 +185,17 @@ public class JDBCController {
 	}
 
 	public void removeEmployee(int id) {
+		String sql_statuses =  "DELETE from statuses where FK_employees = ?";
 		String sql = "DELETE FROM employees where id = ?;";
+		PreparedStatement statement_statuses = null;
+		Connection connection_statuses = null;
 		PreparedStatement statement = null;
 		Connection connection = null;
 		try {
+			connection_statuses = dataSource.getConnection();
+			statement_statuses = connection_statuses.prepareStatement(sql_statuses);
+			statement_statuses.setInt(1, id);
+			statement_statuses.executeUpdate();
 			connection = dataSource.getConnection();
 			statement = connection.prepareStatement(sql);
 			statement.setInt(1, id);
@@ -186,6 +215,22 @@ public class JDBCController {
 			if (connection != null) {
 				try {
 					connection.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+			
+			if (statement_statuses != null) {
+				try {
+					statement_statuses.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+
+			if (connection_statuses != null) {
+				try {
+					connection_statuses.close();
 				} catch (SQLException e) {
 					e.printStackTrace();
 				}
@@ -199,12 +244,11 @@ public class JDBCController {
 		try {
 			connection = dataSource.getConnection();
 			statement = connection.prepareStatement(
-					"INSERT INTO stands (name, ip, username, password, busy) values (?, ?, ?, ?, ?);");
+					"INSERT INTO stands (name, ip, username, password) values (?, ?, ?, ?);");
 			statement.setString(1, stand.getName());
 			statement.setString(2, stand.getIp());
 			statement.setString(3, stand.getUsername());
 			statement.setString(4, stand.getPassword());
-			statement.setBoolean(5, stand.getBusy());
 			statement.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -234,7 +278,7 @@ public class JDBCController {
 		Connection connection = null;
 		try {
 			connection = dataSource.getConnection();
-			statement = connection.prepareStatement("INSERT INTO employees (firstname, lastname) values (?, ?);");
+			statement = connection.prepareStatement("INSERT INTO employees (name, lastname) values (?, ?);");
 			statement.setString(1, employee.getName());
 			statement.setString(2, employee.getLastname());
 			statement.executeUpdate();
