@@ -9,11 +9,28 @@
 	INSERT INTO stands (name, ip, username, password) values ('Stand 1', '123.345.22.11', 'usr1', 'pwd1');
 	INSERT INTO stands (name, ip, username, password) values ('Stand 2', '11.32.21.22', 'usr2', 'pwd2');
 	INSERT INTO stands (name, ip, username, password) values ('Stand 3', '33.333.333.32', 'usr3', 'pwd3');
+	
+	create table users(
+		username varchar(50) not null primary key,
+		password varchar(500) not null,
+		enabled boolean not null
+	);
 
+	create table authorities (
+		username varchar(50) not null,
+		authority varchar(50) not null,
+		constraint fk_authorities_users foreign key(username) references users(username)
+	);
+	
+	create unique index ix_auth_username on authorities (username,authority);
+	
+	
+	
 	CREATE TABLE employees (
 		id SERIAL PRIMARY KEY,
 		name VARCHAR (100),
-		lastname VARCHAR (100)
+		lastname VARCHAR (100),
+		username varchar(50) references users(username)
 	);
 	
 	INSERT INTO employees (name, lastname) values ('Petr', 'Petrov');

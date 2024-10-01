@@ -15,4 +15,12 @@ public class DataSourceConfig {
         dataSourceBuilder.password("12345");
         return dataSourceBuilder.build();
     }
+    
+//    @Bean
+//    DataSource dataSource() {
+//    	return new EmbeddedDatabaseBuilder()
+//    		.setType(EmbeddedDatabaseType.H2)
+//    		.addScript(JdbcDaoImpl.DEFAULT_USER_SCHEMA_DDL_LOCATION)
+//    		.build();
+//    }
 }
