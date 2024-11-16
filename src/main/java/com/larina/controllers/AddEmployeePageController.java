@@ -1,4 +1,4 @@
-package com.advalange.controllers;
+package com.larina.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -6,10 +6,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.advalange.jdbc.DataSourceConfig;
-import com.advalange.jdbc.JDBCController;
-import com.advalange.model.Employee;
-import com.advalange.model.Stand;
+import com.larina.jdbc.DataSourceConfig;
+import com.larina.jdbc.JDBCController;
+import com.larina.model.Employee;
+import com.larina.model.Stand;
 @Controller
 public class AddEmployeePageController {
 	private JDBCController controller = new JDBCController(DataSourceConfig.getDataSource());

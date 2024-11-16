@@ -1,4 +1,4 @@
-package com.advalange.jdbc;
+package com.larina.jdbc;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -9,8 +9,8 @@ import java.util.List;
 
 import javax.sql.DataSource;
 
-import com.advalange.model.Employee;
-import com.advalange.model.Stand;
+import com.larina.model.Employee;
+import com.larina.model.Stand;
 
 public class JDBCController {
 	private DataSource dataSource;

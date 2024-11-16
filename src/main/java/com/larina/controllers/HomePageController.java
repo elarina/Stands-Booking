@@ -1,4 +1,4 @@
-package com.advalange.controllers;
+package com.larina.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

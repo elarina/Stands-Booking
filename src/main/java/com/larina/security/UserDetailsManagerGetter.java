@@ -1,4 +1,4 @@
-package com.advalange.security;
+package com.larina.security;
 
 import org.springframework.context.annotation.Configuration;
 

@@ -1,4 +1,4 @@
-package com.advalange.jdbc;
+package com.larina.jdbc;
 import javax.sql.DataSource;
 
 import org.springframework.boot.jdbc.DataSourceBuilder;

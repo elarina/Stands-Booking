@@ -1,4 +1,4 @@
-package com.advalange.model;
+package com.larina.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
