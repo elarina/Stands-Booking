@@ -10,7 +10,7 @@ public class DataSourceConfig {
     public static DataSource getDataSource() {
         DataSourceBuilder dataSourceBuilder = DataSourceBuilder.create();
         dataSourceBuilder.driverClassName("org.postgresql.Driver");
-        dataSourceBuilder.url("jdbc:postgresql://localhost:5432/postgres");
+        dataSourceBuilder.url("jdbc:postgresql://localhost:5432/stands_state");
         dataSourceBuilder.username("postgres");
         dataSourceBuilder.password("12345");
         return dataSourceBuilder.build();

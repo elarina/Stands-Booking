@@ -1,3 +1,7 @@
+	CREATE DATABASE stands_state;
+	
+	\c stands_state
+	
 	CREATE TABLE stands (
 		id SERIAL PRIMARY KEY,
 		name VARCHAR (100),
