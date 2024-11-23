@@ -61,4 +61,5 @@ Eclipse IDE - https://www.eclipse.org/downloads/
 3. Open browser.
 4. In address bar enter localhost:8080/stands
 
-## Build with Maven and Run executable	
+# Demo
+![](demo/stands_state_demo.mp4)
