@@ -62,4 +62,4 @@ Eclipse IDE - https://www.eclipse.org/downloads/
 4. In address bar enter localhost:8080/stands
 
 # Demo
-![](demo/stands_state_demo.mp4)
+See demo/stands_state_demo.mp4
