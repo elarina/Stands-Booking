@@ -23,7 +23,7 @@
 </div>
 	<br/><br/><br/><br/>
 	<form th:action="@{/addStand}" method="post" th:object="${stand}">
-		<div  style = "margin-left: calc(50% - 500px); width: 500px; clear: both;">
+		<div  style = "margin-left: calc(50% - 250px); width: 500px; clear: both;">
 		<label style="margin-left: 40%;" for="name">Название: </label>
      	<input style="width: 100%; clear: both;" type="text" th:field="*{name}"/>
      	<br/><br/>
@@ -36,10 +36,8 @@
      	<label style="margin-left: 40%;" for="password">Пароль: </label>
      	<input style="width: 100%; clear: both;" type="text" th:field="*{password}"/>
      	<br/><br/>
-		</div>
-		<div>
-			<button style="margin-left: 40%; margin-bottom: 10px;">Добавить стенд</button>
-			<button style="margin-top: 10px; margin-left: 10px;" type="submit"
+			<button style="width: 130px; margin-left: calc(50% - 100px); margin-bottom: 10px;">Добавить стенд</button>
+			<button style="width: 70px; margin-top: 10px; margin-left:10px;" type="submit"
 				name="cancel" value="Cancel">Отмена</button>
 		</div>
 	</form>

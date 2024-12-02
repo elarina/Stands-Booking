@@ -16,7 +16,7 @@ Postgree SQL - https://www.postgresql.org/download/
 4. Choose data directory, which path does not contain spaces.
 5. Enter password "12345" for superuser (postgres)
 6. Enter port 5432.
-7. Select locale.
+7. Select Russian locale.
 8. Install.
 
 ### Configuration

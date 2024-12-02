@@ -23,18 +23,15 @@
 </div>
 	<br/><br/><br/><br/>
 	<form th:action="@{/addEmployee}" method="post" th:object="${employee}">
-		<div  style = "margin-left: calc(50% - 500px); width: 500px; clear: both;">
+		<div  style = "margin-left: calc(50% - 250px); width: 500px; clear: both;">
 		<label style="margin-left: 40%;" for="name">Имя: </label>
      	<input style="width: 100%; clear: both;" type="text" th:field="*{name}"/>
      	<br/><br/>
      	<label style="margin-left: 40%;" for="lastname">Фамилия: </label>
      	<input style="width: 100%; clear: both;" type="text" th:field="*{lastname}"/>
-
-		</div>
-		<br/><br/>
-		<div>
-			<button style="margin-left: 40%; margin-bottom: 10px;">Добавить сотрудника</button>
-			<button style="margin-top: 10px; margin-left: 10px;" type="submit"
+     	<br/><br/>
+			<button style="width: 150px; margin-left: calc(50% - 110px); margin-bottom: 10px;">Добавить сотрудника</button>
+			<button style="width: 70px; margin-top: 10px; margin-left: 10px;" type="submit"
 				name="cancel" value="Cancel">Отмена</button>
 		</div>
 	</form>
