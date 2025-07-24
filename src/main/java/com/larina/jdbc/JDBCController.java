@@ -14,6 +14,10 @@ import com.larina.model.Stand;
 
 public class JDBCController {
 	private DataSource dataSource;
+	
+	private static final String UNDERLINE = "_";
+	private static final String DEFAULT_PASSWORD = "12345";
+	
 
 	public JDBCController(DataSource dataSource) {
 		this.dataSource = dataSource;
@@ -75,7 +79,7 @@ public class JDBCController {
 
 	public List<Employee> queryEmployees() {
 		List<Employee> employees = new ArrayList<Employee>();
-		String sql = "SELECT id, name, lastname FROM employees;";
+		String sql = "SELECT username, name, lastname FROM employees;";
 		Connection connection = null;
 		PreparedStatement statement = null;
 		ResultSet rs = null;
@@ -84,10 +88,10 @@ public class JDBCController {
 			statement = connection.prepareStatement(sql);
 			rs = statement.executeQuery();
 			while (rs.next()) {
-				int id = rs.getInt(1);
+				String username = rs.getString(1);
 				String name = rs.getString(2);
 				String lastname = rs.getString(3);
-				employees.add(new Employee(id, name, lastname));
+				employees.add(new Employee(username, name, lastname));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -184,9 +188,9 @@ public class JDBCController {
 		}
 	}
 
-	public void removeEmployee(int id) {
+	public void removeEmployee(String username) {
 		String sql_statuses =  "DELETE from statuses where FK_employees = ?";
-		String sql = "DELETE FROM employees where id = ?;";
+		String sql = "DELETE FROM employees where username = ?;";
 		PreparedStatement statement_statuses = null;
 		Connection connection_statuses = null;
 		PreparedStatement statement = null;
@@ -194,11 +198,11 @@ public class JDBCController {
 		try {
 			connection_statuses = dataSource.getConnection();
 			statement_statuses = connection_statuses.prepareStatement(sql_statuses);
-			statement_statuses.setInt(1, id);
+			statement_statuses.setString(1, username);
 			statement_statuses.executeUpdate();
 			connection = dataSource.getConnection();
 			statement = connection.prepareStatement(sql);
-			statement.setInt(1, id);
+			statement.setString(1, username);
 			statement.executeUpdate();
 
 		} catch (SQLException e) {
@@ -278,9 +282,12 @@ public class JDBCController {
 		Connection connection = null;
 		try {
 			connection = dataSource.getConnection();
-			statement = connection.prepareStatement("INSERT INTO employees (name, lastname) values (?, ?);");
-			statement.setString(1, employee.getName());
-			statement.setString(2, employee.getLastname());
+			statement = connection.prepareStatement("INSERT INTO employees (username, password, enabled, name, lastname) values (?, ?, ?, ?, ?);");
+			statement.setString(1, employee.getName().toLowerCase() + UNDERLINE + employee.getLastname().toLowerCase());
+			statement.setString(2, DEFAULT_PASSWORD);
+			statement.setBoolean(3, true);
+			statement.setString(4, employee.getName());
+			statement.setString(5, employee.getLastname());
 			statement.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();

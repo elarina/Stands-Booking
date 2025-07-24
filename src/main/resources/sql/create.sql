@@ -14,39 +14,34 @@
 	INSERT INTO stands (name, ip, username, password) values ('Stand 2', '11.32.21.22', 'usr2', 'pwd2');
 	INSERT INTO stands (name, ip, username, password) values ('Stand 3', '33.333.333.32', 'usr3', 'pwd3');
 	
-	create table users(
+	CREATE TABLE employees (
 		username varchar(50) not null primary key,
 		password varchar(500) not null,
-		enabled boolean not null
+		enabled boolean not null,
+		name VARCHAR (100),
+		lastname VARCHAR (100)
 	);
 
 	create table authorities (
 		username varchar(50) not null,
 		authority varchar(50) not null,
-		constraint fk_authorities_users foreign key(username) references users(username)
+		constraint fk_authorities_users foreign key(username) references employees(username)
 	);
 	
 	create unique index ix_auth_username on authorities (username,authority);
 	
+
 	
-	
-	CREATE TABLE employees (
-		id SERIAL PRIMARY KEY,
-		name VARCHAR (100),
-		lastname VARCHAR (100),
-		username varchar(50) references users(username)
-	);
-	
-	INSERT INTO employees (name, lastname) values ('Petr', 'Petrov');
-	INSERT INTO employees (name, lastname) values ('Ivan', 'Ivanov');
-	INSERT INTO employees (name, lastname) values ('Fedor', 'Fedorov');
+	INSERT INTO employees (username, password, enabled, name, lastname) values ('petrovp','12345',true,'Petr', 'Petrov');
+	INSERT INTO employees (username, password, enabled, name, lastname) values ('ivanovi','12345',true,'Ivan', 'Ivanov');
+	INSERT INTO employees (username, password, enabled, name, lastname) values ('fedorovf','12345',true,'Fedor', 'Fedorov');
 	
 	CREATE TABLE statuses (
 		id SERIAL PRIMARY KEY,
 		status BOOLEAN,
 		FK_stands INTEGER REFERENCES stands(id),
-		FK_employees INTEGER REFERENCES employees(id)
+		FK_employees VARCHAR(50) REFERENCES employees(username)
 	);
 	
-	INSERT INTO statuses (status, FK_stands, FK_employees) values (true, 1, 1);
-	INSERT INTO statuses (status, FK_stands, FK_employees) values (true, 2, 2);
+	INSERT INTO statuses (status, FK_stands, FK_employees) values (true, 1, 'petrovp');
+	INSERT INTO statuses (status, FK_stands, FK_employees) values (true, 2, 'ivanovi');

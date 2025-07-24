@@ -1,23 +1,22 @@
 package com.larina.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-@Entity
 public class Employee {
+	private String username;
+
+	private String password;
+	private boolean enabled;
+
 	private String name;
 	private String lastname;
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
-	
-	public Employee() {}
-	
-	public Employee(long id, String name, String lastname) {
+
+	public Employee() {
+	}
+
+	public Employee(String username, String name, String lastname) {
 		super();
-		this.id = id;
+		this.username = username;
+		this.password = "12345";
+		this.enabled = true;
 		this.name = name;
 		this.lastname = lastname;
 	}
@@ -30,14 +29,6 @@ public class Employee {
 		return lastname;
 	}
 
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
 	public void setName(String name) {
 		this.name = name;
 	}
@@ -45,7 +36,29 @@ public class Employee {
 	public void setLastname(String lastname) {
 		this.lastname = lastname;
 	}
-	
-	
-	
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public boolean isEnabled() {
+		return enabled;
+	}
+
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
+	}
+
 }

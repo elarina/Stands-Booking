@@ -9,6 +9,7 @@ public class HomePageController {
 	@GetMapping("/")
 	public String showHomePage() {
 		return "login";
+		
 	}
 	
 }

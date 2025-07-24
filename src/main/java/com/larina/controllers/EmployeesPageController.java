@@ -32,13 +32,13 @@ public class EmployeesPageController {
 	
 
 	@PostMapping(value = "/employees", params = "delete")
-	public String removeStand(@RequestParam(value = "employee_ids", required = false) int[] ids, Model model) {
+	public String removeStand(@RequestParam(value = "employee_ids", required = false) String[] usernames, Model model) {
 		System.out.println("delete");
-		if (ids == null) {
+		if (usernames == null) {
 			return "redirect:/employees";
 		}
-		for (int id : ids) {
-			controller.removeEmployee(id);
+		for (String username: usernames) {
+			controller.removeEmployee(username);
 
 		}
 		return "redirect:/employees";
