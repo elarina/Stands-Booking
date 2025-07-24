@@ -1,1 +1,0 @@
-\i 'F:\\mine\\Stands_State_App\\Stand_State\\src\\main\\resources\\sql\\create.sql'

@@ -24,11 +24,12 @@ Postgree SQL - https://www.postgresql.org/download/
 1. Enter win+R and enter "services.msc"
 2. In opened window find postresql-...-...
 3. Right click on postgresql-...-... and Run
-4. Open SQL Shell (psql)
-5. Enter default server name, database, port, username and password 12345.
-6. Run script /stands_state/src/main/resources/sql/create.sql by command: \i 'full_path_to\\create.sql'
-An example of running this command is given in /stands_state/src/main/resources/sql/run_sql_example.txt
 
+### View data in DB
+
+1. Open SQL Shell (psql)
+2. Enter default server name, database, port, username and password 12345.
+3. Enter query and view result.
 
 ## Run from IDE
 
