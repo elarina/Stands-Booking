@@ -15,7 +15,7 @@ import com.larina.model.Stand;
 public class JDBCController {
 	private DataSource dataSource;
 	
-	private static final String UNDERLINE = "_";
+	private static final String UNDERLINE = "__";
 	private static final String DEFAULT_PASSWORD = "12345";
 	
 
