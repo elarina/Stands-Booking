@@ -6,14 +6,17 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.larina.jdbc.DataSourceConfig;
-import com.larina.jdbc.JDBCController;
 import com.larina.model.Stand;
+import com.larina.repositories.StandsRepository;
 
 @Controller
 public class AddStandPageController {
 	
-	private JDBCController controller = new JDBCController(DataSourceConfig.getDataSource());
+	private final StandsRepository standsRepository;
+	
+	public AddStandPageController(StandsRepository standsRepository) {
+		this.standsRepository = standsRepository;
+	}
 	
 	@GetMapping("/addStand") 
 	public String showAddStandsPage(Model model) {
@@ -25,7 +28,7 @@ public class AddStandPageController {
 	public String addStand(@ModelAttribute Stand stand, Model model) {
 		System.out.println(stand);
 		System.out.println(stand.getId());
-		controller.addStand(stand);	
+		standsRepository.save(stand);	
 		return "redirect:/stands";
 	}
 	

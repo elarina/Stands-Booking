@@ -2,6 +2,7 @@ package com.larina.controllers;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -9,13 +10,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.larina.jdbc.DataSourceConfig;
-import com.larina.jdbc.JDBCController;
 import com.larina.model.Employee;
+import com.larina.repositories.EmployeeRepository;
 
 @Controller
 public class EmployeesPageController {
-	private JDBCController controller = new JDBCController(DataSourceConfig.getDataSource());
+	private final EmployeeRepository employeeRepository;
+
+	public EmployeesPageController(EmployeeRepository employeeRepository){
+		this.employeeRepository = employeeRepository;
+	}
 	
 	@GetMapping("/employees")
 	public String showEmployeesPage(Model model) {
@@ -24,7 +28,7 @@ public class EmployeesPageController {
 	}
 
 	private void addEmployees(Model model) {
-		List<Employee> employees = controller.queryEmployees();
+		List<Employee> employees = employeeRepository.findAll();
 		List<Integer> employeeIds = new ArrayList<>();
 		model.addAttribute("employees", employees);
 		model.addAttribute("employee_ids", employeeIds);		
@@ -32,14 +36,16 @@ public class EmployeesPageController {
 	
 
 	@PostMapping(value = "/employees", params = "delete")
-	public String removeStand(@RequestParam(value = "employee_ids", required = false) String[] usernames, Model model) {
+	public String removeStand(@RequestParam(value = "employee_ids", required = false) long[] ids, Model model) {
 		System.out.println("delete");
-		if (usernames == null) {
+		if (ids == null) {
 			return "redirect:/employees";
 		}
-		for (String username: usernames) {
-			controller.removeEmployee(username);
-
+		for (long id: ids) {
+			Optional<Employee> employee = employeeRepository.findById(id);
+			if(employee.isPresent()) {
+				employeeRepository.delete(employee.get());
+			}
 		}
 		return "redirect:/employees";
 	}

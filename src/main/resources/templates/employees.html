@@ -32,7 +32,7 @@
 			<th width="20%">Имя</th>
 		</tr>
 		<tr th:each="employee: ${employees}">
-			<td align="center"><input type="checkbox" name="employee_ids" th:value="${employee.username}"/></td>
+			<td align="center"><input type="checkbox" name="employee_ids" th:value="${employee.id}"/></td>
 			<td align="center" th:text="${employee.name} +' ' + ${employee.lastname}"></td>
 		</tr>
 	</table>

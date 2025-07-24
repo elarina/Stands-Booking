@@ -4,8 +4,10 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
+@Table(name="statuses")
 public 	class Status {
 	
 	@Id
@@ -21,9 +23,8 @@ public 	class Status {
 
 	public Status() {}
 	
-	public Status(Long id, Long stand_id, Long employee_id, boolean status) {
+	public Status(Long stand_id, Long employee_id, boolean status) {
 		super();
-		this.id = id;
 		this.stand_id = stand_id;
 		this.employee_id = employee_id;
 		this.status = status;

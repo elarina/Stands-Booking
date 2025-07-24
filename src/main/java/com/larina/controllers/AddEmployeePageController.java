@@ -6,13 +6,18 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.larina.jdbc.DataSourceConfig;
-import com.larina.jdbc.JDBCController;
 import com.larina.model.Employee;
 import com.larina.model.Stand;
+import com.larina.repositories.EmployeeRepository;
+
 @Controller
 public class AddEmployeePageController {
-	private JDBCController controller = new JDBCController(DataSourceConfig.getDataSource());
+
+	private final EmployeeRepository employeeRepository;
+	
+	public AddEmployeePageController(EmployeeRepository employeeRepository) {
+		this.employeeRepository = employeeRepository;
+	}
 	
 	@GetMapping("/addEmployee") 
 	public String showAddEmployeePage(Model model) {
@@ -22,12 +27,12 @@ public class AddEmployeePageController {
 	
 	@PostMapping(value = "/addEmployee")
 	public String addEmployee(@ModelAttribute Employee employee, Model model) {
-		controller.addEmployee(employee);	
+		employeeRepository.save(employee);
 		return "redirect:/employees";
 	}
 	
 	@PostMapping(value = "/addEmployee", params = "cancel")
 	public String cancelAddEmployee(@ModelAttribute Stand stand, Model model) {
-		return "redirect:/addStand";
+		return "redirect:/employees";
 	}
 }

@@ -1,11 +1,26 @@
 package com.larina.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.PrimaryKeyJoinColumn;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name="employees")
 public class Employee {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	
+	@PrimaryKeyJoinColumn
 	private String username;
 
 	private String password;
 	private boolean enabled;
-
+	
 	private String name;
 	private String lastname;
 
@@ -60,5 +75,15 @@ public class Employee {
 	public void setEnabled(boolean enabled) {
 		this.enabled = enabled;
 	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+	
+	
 
 }
