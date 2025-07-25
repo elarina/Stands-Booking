@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model:Screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://wireframesketcher.com/1.0/model.ecore">
-  <widgets xsi:type="model:Browser" id="1" x="312" y="24" width="793" height="657" text="Browser&#xA;http://mopsplc.stands.advalange.com/state&#xA;" measuredWidth="793" measuredHeight="657">
+  <widgets xsi:type="model:Browser" id="1" x="312" y="24" width="793" height="657" text="Browser&#xA;http://stands.domen.com/state&#xA;" measuredWidth="793" measuredHeight="657">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Table" id="3" x="340" y="184" width="737" height="201" text="Name,IP,=. State, Employee, Action&#xA;Stand 1,10.16.1.12,Busy,Иван Иванов, [Release]&#xA;Stand 2,11.23.45.21,Free, , [Take Up]&#xA;Stand 3,233.90.11.77,Free, , [Take Up]&#xA;Stand 4,74.29.19.44, Busy,Петр Петров , [Release]&#xA;&#xA;" measuredWidth="737" measuredHeight="201" alternative="#eee">
+  <widgets xsi:type="model:Table" id="3" x="340" y="184" width="737" height="201" text="Name,IP,=. State, Employee, Period, Action&#xA;Stand 1,10.16.1.12,Busy,Иван Иванов, 13:30 -14:30, [Release]&#xA;Stand 2,11.23.45.21,Free, , ,[Take Up]&#xA;Stand 3,233.90.11.77,Free, , ,[Take Up]&#xA;Stand 4,74.29.19.44, Busy,Петр Петров , 12:00 -19:00,[Release]&#xA;&#xA;" measuredWidth="737" measuredHeight="201" alternative="#eee">
     <font/>
-    <items x="611" y="24" width="39" height="15" text="Release"/>
-    <items x="611" y="45" width="41" height="15" text="Take Up"/>
-    <items x="611" y="66" width="41" height="15" text="Take Up"/>
-    <items x="611" y="87" width="39" height="15" text="Release"/>
+    <items x="635" y="24" width="39" height="15" text="Release"/>
+    <items x="635" y="45" width="42" height="15" text="Take Up"/>
+    <items x="635" y="66" width="42" height="15" text="Take Up"/>
+    <items x="635" y="87" width="39" height="15" text="Release"/>
   </widgets>
-  <widgets xsi:type="model:Label" id="8" x="340" y="128" width="309" text="Состояние стендов МОПС ПЛК" measuredWidth="309" measuredHeight="36">
+  <widgets xsi:type="model:Label" id="8" x="340" y="128" width="197" text="Состояние стендов" measuredWidth="197" measuredHeight="36">
     <font size="20px"/>
   </widgets>
   <widgets xsi:type="model:Menu" id="20" x="340" y="86" width="349" text="Текущее состояние, Бронирование, Администрирование" measuredWidth="349" measuredHeight="27">
-    <items x="5" y="0" width="118" height="27" text="Текущее состояние"/>
-    <items x="123" y="0" width="92" height="27" text="Бронирование"/>
-    <items x="215" y="0" width="126" height="27" text="Администрирование"/>
+    <items x="5" y="0" width="119" height="27" text="Текущее состояние"/>
+    <items x="124" y="0" width="92" height="27" text="Бронирование"/>
+    <items x="216" y="0" width="126" height="27" text="Администрирование"/>
   </widgets>
   <widgets xsi:type="model:Label" id="28" x="1001" y="88" text="Петр Петров" measuredWidth="76" measuredHeight="23">
     <font/>

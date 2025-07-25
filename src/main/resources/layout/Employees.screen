@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model:Screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://wireframesketcher.com/1.0/model.ecore">
-  <widgets xsi:type="model:Browser" id="1" x="240" y="80" width="793" height="657" text="Browser&#xA;http://mopsplc.stands.advalange.com/employees&#xA;&#xA;" measuredWidth="793" measuredHeight="657">
+  <widgets xsi:type="model:Browser" id="1" x="240" y="80" width="793" height="657" text="Browser&#xA;http://stands.domen.com/employees&#xA;&#xA;" measuredWidth="793" measuredHeight="657">
     <font/>
   </widgets>
   <widgets xsi:type="model:Table" id="2" x="268" y="240" width="737" height="201" text=",Имя&#xA;[x],Иван Иванов&#xA;[],Петр Петров&#xA;[],Степан Степанов&#xA;&#xA;&#xA;&#xA;" measuredWidth="737" measuredHeight="201" alternative="#eee">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Label" id="3" x="268" y="184" width="269" text="Сотрудники МОПС ПЛК" measuredWidth="269" measuredHeight="36">
+  <widgets xsi:type="model:Label" id="3" x="268" y="184" width="269" text="Сотрудники" measuredWidth="269" measuredHeight="36">
     <font size="20px"/>
   </widgets>
   <widgets xsi:type="model:Button" id="4" x="824" y="200" width="177" text="Добавить сотрудника" measuredWidth="177" measuredHeight="25">
     <font/>
   </widgets>
   <widgets xsi:type="model:Menu" id="5" x="268" y="152" width="349" text="Текущее состояние, Бронирование, Администрирование" measuredWidth="349" measuredHeight="27">
-    <items x="5" y="0" width="118" height="27" text="Текущее состояние"/>
-    <items x="123" y="0" width="92" height="27" text="Бронирование"/>
-    <items x="215" y="0" width="126" height="27" text="Администрирование"/>
+    <items x="5" y="0" width="119" height="27" text="Текущее состояние"/>
+    <items x="124" y="0" width="92" height="27" text="Бронирование"/>
+    <items x="216" y="0" width="126" height="27" text="Администрирование"/>
   </widgets>
-  <widgets xsi:type="model:Button" id="6" x="752" y="456" text="Сбросить выбор" measuredWidth="112" measuredHeight="25">
+  <widgets xsi:type="model:Button" id="6" x="344" y="464" text="Сбросить" measuredWidth="73" measuredHeight="25">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Button" id="7" x="876" y="456" text="Удалить выбранное" measuredWidth="129" measuredHeight="25">
+  <widgets xsi:type="model:Button" id="7" x="268" y="464" text="Удалить" measuredWidth="64" measuredHeight="25">
     <font/>
   </widgets>
   <widgets xsi:type="model:Label" id="8" x="921" y="154" text="Петр Петров" measuredWidth="76" measuredHeight="23">
