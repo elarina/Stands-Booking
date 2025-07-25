@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Add Stand</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="menu.css" />
+</head>
+<body>
+	<div class="navbar">
+		<a href="/booking">Бронирование</a>
+		<div class="dropdown">
+			<button class="dropbtn">
+				Администрирование <i class="fa fa-caret-down"></i>
+			</button>
+			<div class="dropdown-content">
+				<a href="/stands">Стенды</a> <a href="/employees">Сотрудники</a>
+			</div>
+		</div>
+	</div>
+	<h1>Бронирование</h1>
+	<br />
+	<div class="button-container">
+		<a th:each="btn : ${buttons}" th:href="@{${btn.actionUrl}}" th:text="${btn.standName}"> </a> 
+	</div>
+</body>
+</html>
