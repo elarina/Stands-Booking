@@ -66,7 +66,7 @@ Eclipse IDE - https://www.eclipse.org/downloads/
 See demo/stands_state_demo.mp4
 
 # UI on Figma
-https://www.figma.com/proto/igwGeY3MepQ3tgyGH0yTDF/Stands_State
+https://www.figma.com/design/igwGeY3MepQ3tgyGH0yTDF/Stands_State?node-id=2-145&m=dev&t=OlU8jcxsskFKiFXl-1
 
 # Usefull links
 Spring Tools Suite install - https://github.com/spring-projects/spring-tools/wiki/Installation
