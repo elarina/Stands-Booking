@@ -69,7 +69,7 @@ body {
 	padding: 20px;
 }
 
-.button-container a {
+.button-container-a {
 	display: flex;
 	width: 250px;
 	height: 150px;
@@ -83,6 +83,14 @@ body {
 	text-align: center;
 }
 
+.off {
+ 	background-color: #FF3A3D;	
+ 	
+}
+
+
 .button-container a:hover {
-	background-color: #9CEE88;
+	filter: brightness(0.9);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }

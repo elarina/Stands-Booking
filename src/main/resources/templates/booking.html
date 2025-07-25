@@ -20,7 +20,8 @@
 	<h1>Бронирование</h1>
 	<br />
 	<div class="button-container">
-		<a th:each="btn : ${buttons}" th:href="@{${btn.actionUrl}}" th:text="${btn.standName}"> </a> 
+		<a class="button-container-a" th:each="btn : ${buttons}" th:href="@{${btn.actionUrl}}" th:text="${btn.standName}" 
+		th:classappend="${btn.standName == 'Stand Stand Stand 11'} ? 'off' : 'on'"> </a> 
 	</div>
 </body>
 </html>
