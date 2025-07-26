@@ -1,0 +1,90 @@
+.form-container {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+.form-title {
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+  margin-right: 1.5rem;
+  position: relative;
+}
+
+/* Лейблы */
+.form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #34495e;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+/* Текстовые поля и textarea */
+.form-control {
+  width: 100%;
+  padding: 0.75rem 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background-color: #f9f9f9;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+  background-color: #fff;
+}
+
+.btn-group{
+	display: inline-block;
+	width: 100%;
+	text-align: right;	
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: center;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: lightblue;
+  color: white;
+  margin-left: 1rem;
+}
+
+.btn:hover {
+	filter: brightness(0.9);	
+}
+
+.btn-primary {
+  background-color: #3498db;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+}

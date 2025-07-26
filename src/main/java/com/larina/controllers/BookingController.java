@@ -36,7 +36,7 @@ public class BookingController {
 		
 		
 		List<BookingStandButton> bookingEntities = standsRepository.findAll().stream()
-				.filter(sr -> parentGroupId == null ? source.contains("stands") : sr.getGroup().getId().equals(parentGroupId))
+				.filter(sr -> parentGroupId == null ? source.contains("stands") : sr.getGroup() != null && sr.getGroup().getId().equals(parentGroupId))
 				.map((Stand s) -> new BookingStandButton(s.getName(), s.getId(), "/bookingStand")).toList();
 
 		List<StandsGroupRelation> sgrs = standGroupRelationRepository.findAll().stream()

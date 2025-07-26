@@ -4,6 +4,7 @@
 <title>Add Stand</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="stylesheet" href="menu.css" />
+<link rel="stylesheet" href="addForm.css" />
 </head>
 <body>
 	<h1>Добавление сотрудника</h1>
@@ -14,7 +15,8 @@
 				Бронирование <i class="fa fa-caret-down"></i>
 			</button>
 			<div class="dropdown-content">
-				<a href="/booking?source='stands'">Стенды</a> <a href="/booking?source='groups'">Группы</a>
+				<a href="/booking?source='stands'">Стенды</a> <a
+					href="/booking?source='groups'">Группы</a>
 			</div>
 		</div>
 		<div class="dropdown">
@@ -26,25 +28,18 @@
 			</div>
 		</div>
 	</div>
-	<br />
-	<br />
-	<br />
-	<br />
-	<form th:action="@{/addEmployee}" method="post" th:object="${employee}">
-		<div
-			style="margin-left: calc(50% - 250px); width: 500px; clear: both;">
-			<label style="margin-left: 40%;" for="name">Имя: </label> <input
-				style="width: 100%; clear: both;" type="text" th:field="*{name}" />
-			<br />
-			<br /> <label style="margin-left: 40%;" for="lastname">Фамилия:
-			</label> <input style="width: 100%; clear: both;" type="text"
-				th:field="*{lastname}" /> <br />
-			<br />
-			<button
-				style="width: 150px; margin-left: calc(50% - 110px); margin-bottom: 10px;">Добавить
-				сотрудника</button>
-			<button style="width: 70px; margin-top: 10px; margin-left: 10px;"
-				type="submit" name="cancel" value="Cancel">Отмена</button>
+	<form class="form-container" th:action="@{/addEmployee}" method="post"
+		th:object="${employee}">
+		<h3 class="form-title">Добавление сотрудника</h3>
+		<div class="form-group">
+			<label class="form-label">Имя: </label> <input class="form-control"
+				type="text" th:field="*{name}" /> <br /> <br /> <label
+				class="form-label" for="lastname">Фамилия: </label> <input
+				class="form-control" type="text" th:field="*{lastname}" /> <br />
+		</div>
+		<div class="btn-group">
+			<button class="btn">Добавить сотрудника</button>
+			<button class="btn" type="submit" name="cancel" value="Cancel">Отмена</button>
 		</div>
 	</form>
 </body>

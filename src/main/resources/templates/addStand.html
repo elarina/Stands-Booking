@@ -4,6 +4,7 @@
 <title>Add Stand</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="stylesheet" href="menu.css" />
+<link rel="stylesheet" href="addForm.css" />
 </head>
 <body>
 	<h1>Добавление стенда</h1>
@@ -14,7 +15,8 @@
 				Бронирование <i class="fa fa-caret-down"></i>
 			</button>
 			<div class="dropdown-content">
-				<a href="/booking?source='stands'">Стенды</a> <a href="/booking?source='groups'">Группы</a>
+				<a href="/booking?source='stands'">Стенды</a> <a
+					href="/booking?source='groups'">Группы</a>
 			</div>
 		</div>
 		<div class="dropdown">
@@ -26,30 +28,23 @@
 			</div>
 		</div>
 	</div>
-	<br />
-	<br />
-	<br />
-	<br />
-	<form th:action="@{/addStand}" method="post" th:object="${stand}">
-		<div
-			style="margin-left: calc(50% - 250px); width: 500px; clear: both;">
-			<label style="margin-left: 40%;" for="name">Название: </label> <input
-				style="width: 100%; clear: both;" type="text" th:field="*{name}" />
+	<form class="form-container" th:action="@{/addStand}" method="post"
+		th:object="${stand}">
+		<h3 class="form-title">Добавление стенда</h3>
+		<div class="form-group">
+			<label class="form-label" for="name">Название: </label> <input
+				class="form-control" type="text" th:field="*{name}" /> <br /> <br />
+			<label class="form-label" for="ip">IP-адрес: </label> <input
+				class="form-control" type="text" th:field="*{ip}" /> <br /> <br />
+			<label class="form-label" for="username">Имя пользователя: </label> <input
+				class="form-control" type="text" th:field="*{username}" /> <br />
+			<br /> <label class="form-label" for="password">Пароль: </label> <input
+				class="form-control" type="text" th:field="*{password}" /> <br />
 			<br />
-			<br /> <label style="margin-left: 40%;" for="ip">IP-адрес: </label> <input
-				style="width: 100%; clear: both;" type="text" th:field="*{ip}" /> <br />
-			<br /> <label style="margin-left: 40%;" for="username">Имя
-				пользователя: </label> <input style="width: 100%; clear: both;" type="text"
-				th:field="*{username}" /> <br />
-			<br /> <label style="margin-left: 40%;" for="password">Пароль:
-			</label> <input style="width: 100%; clear: both;" type="text"
-				th:field="*{password}" /> <br />
-			<br />
-			<button
-				style="width: 130px; margin-left: calc(50% - 100px); margin-bottom: 10px;">Добавить
-				стенд</button>
-			<button style="width: 70px; margin-top: 10px; margin-left: 10px;"
-				type="submit" name="cancel" value="Cancel">Отмена</button>
+		</div>
+		<div class="btn-group">
+			<button class="btn">Добавить стенд</button>
+			<button class="btn" type="submit" name="cancel" value="Cancel">Отмена</button>
 		</div>
 	</form>
 </body>
