@@ -20,19 +20,26 @@
 		</div>
 	</div>
 	<form class="table-striped-form">
-		<button	class="table_button" th:classappend="add_button" th:formaction="@{/addEmployee?add}" formmethod="get"></button>
-		<button class="table_button" th:classappend="delete_button" type="submit" name="delete" value="Delete" th:formaction="@{?removeEmployee}" formmethod="post"></button>
+		<button class="table_button" th:classappend="add_button"
+			th:formaction="@{/addEmployee?add}" formmethod="get"></button>
+		<button class="table_button" th:classappend="delete_button"
+			type="submit" name="delete" value="Delete"
+			th:formaction="@{?removeEmployee}" formmethod="post"></button>
 		<table class="table-striped">
-			<tr>
-				<th th:classappend="checkbox-column"><input type="checkbox"
-					name="selectAll" id="selectAll" /></th>
-				<th>Имя</th>
-			</tr>
-			<tr th:each="employee: ${employees}">
-				<td><input type="checkbox" name="employee_ids"
-					class="itemCheckbox" th:value="${employee.id}" /></td>
-				<td th:text="${employee.name} +' ' + ${employee.lastname}"></td>
-			</tr>
+			<thead>
+				<tr>
+					<th th:classappend="checkbox-column"><input type="checkbox"
+						name="selectAll" id="selectAll" /></th>
+					<th>Имя</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="employee: ${employees}">
+					<td><input type="checkbox" name="employee_ids"
+						class="itemCheckbox" th:value="${employee.id}" /></td>
+					<td th:text="${employee.name} +' ' + ${employee.lastname}"></td>
+				</tr>
+			</tbody>
 		</table>
 		<script>
 		  document.getElementById('selectAll').addEventListener('change', function() {

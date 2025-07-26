@@ -27,23 +27,26 @@
 			th:formaction="@{?removeStand}" formmethod="post"></button>
 
 		<table class="table-striped">
-			<tr>
-				<th th:classappend="checkbox-column"><input type="checkbox"
-					name="selectAll" id="selectAll"></th>
-				<th>Название</th>
-				<th>IP</th>
-				<th>Имя пользователя</th>
-				<th>Пароль</th>
-
-			</tr>
-			<tr th:each="stand: ${stands}">
-				<td align="center"><input type="checkbox" class="itemCheckbox" name="stand_ids"
-					th:value="${stand.id}" /></td>
-				<td align="center" th:text="${stand.name}"></td>
-				<td align="center" th:text="${stand.ip}"></td>
-				<td align="center" th:text="${stand.username}"></td>
-				<td align="center" th:text="${stand.password}"></td>
-			</tr>
+			<tbody>
+				<tr>
+					<th th:classappend="checkbox-column"><input type="checkbox"
+						name="selectAll" id="selectAll"></th>
+					<th>Название</th>
+					<th>IP</th>
+					<th>Имя пользователя</th>
+					<th>Пароль</th>
+				</tr>
+			</tbody>
+			<thead>
+				<tr th:each="stand: ${stands}">
+					<td align="center"><input type="checkbox" class="itemCheckbox"
+						name="stand_ids" th:value="${stand.id}" /></td>
+					<td align="center" th:text="${stand.name}"></td>
+					<td align="center" th:text="${stand.ip}"></td>
+					<td align="center" th:text="${stand.username}"></td>
+					<td align="center" th:text="${stand.password}"></td>
+				</tr>
+			</thead>
 		</table>
 		<script>
 		  document.getElementById('selectAll').addEventListener('change', function() {

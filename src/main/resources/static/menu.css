@@ -214,6 +214,7 @@ button:hover{
   background-color: #f8fafc;
 }
 
-.table-striped tr:hover {
+.table-striped tbody tr:hover {
   background-color: #e6f0ff;
+  cursor: pointer;
 }
