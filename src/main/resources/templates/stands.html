@@ -27,7 +27,7 @@
 			th:formaction="@{?removeStand}" formmethod="post"></button>
 
 		<table class="table-striped">
-			<tbody>
+			<thead>
 				<tr>
 					<th th:classappend="checkbox-column"><input type="checkbox"
 						name="selectAll" id="selectAll"></th>
@@ -36,8 +36,8 @@
 					<th>Имя пользователя</th>
 					<th>Пароль</th>
 				</tr>
-			</tbody>
-			<thead>
+			</thead>
+			<tbody>
 				<tr th:each="stand: ${stands}">
 					<td align="center"><input type="checkbox" class="itemCheckbox"
 						name="stand_ids" th:value="${stand.id}" /></td>
@@ -46,7 +46,7 @@
 					<td align="center" th:text="${stand.username}"></td>
 					<td align="center" th:text="${stand.password}"></td>
 				</tr>
-			</thead>
+			</tbody>
 		</table>
 		<script>
 		  document.getElementById('selectAll').addEventListener('change', function() {
