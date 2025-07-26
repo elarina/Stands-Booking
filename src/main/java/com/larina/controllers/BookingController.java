@@ -54,7 +54,7 @@ public class BookingController {
 		model.addAttribute("source", source);
 		model.addAttribute("groups", groups);
 		model.addAttribute("buttons", bookingEntities);
-		return "/booking";
+		return "booking";
 	}
 
 }

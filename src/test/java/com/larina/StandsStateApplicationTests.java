@@ -1,4 +1,4 @@
-package com.advalange.stands_state;
+package com.larina;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

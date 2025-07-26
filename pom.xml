@@ -9,7 +9,7 @@
 		<version>3.3.3</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.advalange</groupId>
+	<groupId>com.larina</groupId>
 	<artifactId>stands_state</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>stands_state</name>
