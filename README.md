@@ -1,4 +1,4 @@
-Web application for monitoring the status of stands
+Web application for booking stands and monitoring the status of stands
 
 # Run application on Windows
 
