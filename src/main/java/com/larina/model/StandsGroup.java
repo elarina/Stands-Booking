@@ -12,7 +12,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "stand_groups")
-public class StandsGroup {
+public class StandsGroup implements BookingContent {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

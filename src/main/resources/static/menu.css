@@ -70,6 +70,35 @@ body {
 	padding: 20px;
 }
 
+.group-container {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
+	padding: 20px;	
+}
+
+.group-container-a {
+	display: flex;
+	width: 250px;
+	height: 150px;
+	padding: 10px 15px;
+	align-items: center;
+	justify-content: center;
+	background-color: lightblue;
+	color: gray;
+	text-decoration: none;
+	border-radius: 4px;
+	text-align: center;
+	font-size: 20px;
+}
+
+.group-container a:hover {
+	filter: brightness(0.9);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+
 .example {
 	display: flex;
 	gap: 10px;

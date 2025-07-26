@@ -10,7 +10,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "stands")
-public class Stand {
+public class Stand implements BookingContent {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

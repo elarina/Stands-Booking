@@ -21,6 +21,9 @@ public class StandsGroupRelation {
 	@JoinColumn(name="child_group_id")
 	private Long childGroupId;
 
+	public StandsGroupRelation() {
+	}
+	
 	public StandsGroupRelation(Long parentGroupId, Long childGroupId) {
 		this.parentGroupId = parentGroupId;
 		this.childGroupId = childGroupId;
