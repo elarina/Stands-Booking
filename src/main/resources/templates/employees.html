@@ -35,7 +35,7 @@
 		<table class="table-striped">
 			<thead>
 				<tr>
-					<th th:classappend="checkbox-column"><input type="checkbox"
+					<th th:classappend="checkbox-column"><input type="checkbox" class="large-checkbox"
 						name="selectAll" id="selectAll" /></th>
 					<th>Имя</th>
 				</tr>
@@ -43,7 +43,7 @@
 			<tbody>
 				<tr th:each="employee: ${employees}">
 					<td><input type="checkbox" name="employee_ids"
-						class="itemCheckbox" th:value="${employee.id}" /></td>
+						class="itemCheckbox" th:classappend="large-checkbox" th:value="${employee.id}" /></td>
 					<td th:text="${employee.name} +' ' + ${employee.lastname}"></td>
 				</tr>
 			</tbody>

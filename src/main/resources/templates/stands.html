@@ -36,7 +36,7 @@
 		<table class="table-striped">
 			<thead>
 				<tr>
-					<th th:classappend="checkbox-column"><input type="checkbox"
+					<th th:classappend="checkbox-column"><input type="checkbox" class="large-checkbox"
 						name="selectAll" id="selectAll"></th>
 					<th>Название</th>
 					<th>IP</th>
@@ -46,7 +46,7 @@
 			</thead>
 			<tbody>
 				<tr th:each="stand: ${stands}">
-					<td><input type="checkbox" class="itemCheckbox"
+					<td><input type="checkbox" width="40px" class="itemCheckbox" th:classappend="large-checkbox"
 						name="stand_ids" th:value="${stand.id}" /></td>
 					<td th:text="${stand.name}"></td>
 					<td th:text="${stand.ip}"></td>
