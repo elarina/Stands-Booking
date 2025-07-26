@@ -13,7 +13,7 @@
 				Бронирование <i class="fa fa-caret-down"></i>
 			</button>
 			<div class="dropdown-content">
-				<a href="/booking">Стенды</a> <a href="/bookingGroups">Группы</a>
+				<a href="/booking?source='stands'">Стенды</a> <a href="/booking?source='groups'">Группы</a>
 			</div>
 		</div>
 		<div class="dropdown">
@@ -27,6 +27,8 @@
 	</div>
 	<br />
 	<div class="example">
+		<div th:if="not ${#lists.isEmpty(groups)}" class="example-color-group"></div>
+		<div th:if="not ${#lists.isEmpty(groups)}" class="example-text">группы</div>
 		<div class="example-color-on"></div>
 		<div class="example-text">свободные</div>
 		<div class="example-color-busy"></div>
@@ -36,13 +38,14 @@
 		<div class="example-color-off"></div>
 		<div class="example-text">отключенные</div>
 	</div>
-	<br><br>
+	<br>
+	<br>
 	<div class="group-container">
 		<a class="group-container-a" th:each="group : ${groups}"
-			th:href="@{${group.actionUrl} + ${group.groupId}}" th:text="${group.groupName}">
-		</a>
+			th:href="@{${group.actionUrl} + ${group.groupId}}"
+			th:text="${group.groupName}"> </a>
 	</div>
-	
+
 	<div class="button-container">
 		<a class="button-container-a" th:each="btn : ${buttons}"
 			th:href="@{${btn.actionUrl}}" th:text="${btn.standName}"

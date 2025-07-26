@@ -104,6 +104,15 @@ body {
 	gap: 10px;
 }
 
+.example-color-group {
+	background-color: lightblue;
+	width: 30px;
+	height: 30px;
+	align-content: center;
+	margin-left: 20px;
+	
+}
+
 .example-color-on {
 	background-color: #BBFFAA;
 	width: 30px;
