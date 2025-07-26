@@ -48,7 +48,7 @@ public class BookingController {
 		List<BookingStandGroup> groups = standGroupRepository.findAll().stream()
 				.filter(sr -> source.contains("groups") && parentGroupId == null ? rootGroups.contains(sr)
 						: sgrs.stream().anyMatch(sgr -> sgr.getChildGroupId().equals(sr.getId())))
-				.map((StandsGroup sg) -> new BookingStandGroup(sg.getName(), sg.getId(), "/booking?source='groups'&groupId="))
+				.map((StandsGroup sg) -> new BookingStandGroup(sg.getName(), sg.getId(), "/booking?source=groups&groupId="))
 				.toList();
 
 		model.addAttribute("source", source);
