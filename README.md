@@ -81,6 +81,8 @@ Eclipse IDE - https://www.eclipse.org/downloads/
 # Demo
 See [demo](https://elarina.github.io/Stand_State/)
 
+[![Видео-превью](demo)](https://elarina.github.io/Stand_State/)
+
 # UI on Figma
 https://www.figma.com/design/igwGeY3MepQ3tgyGH0yTDF/Stands_State?node-id=2-145&m=dev&t=OlU8jcxsskFKiFXl-1
 
