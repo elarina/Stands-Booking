@@ -31,6 +31,22 @@ Postgree SQL - https://www.postgresql.org/download/
 2. Enter default server name, database, port, username and password 12345.
 3. Enter query and view result.
 
+## Run builded app
+
+Build and run application from Command Line
+
+### Build with Maven
+1. Open project's root directory (Stands_State)
+2. Run cmd for this directory
+3. Execute command "mvn clean verify"
+
+### Run builded app
+1. Open Stands_State/target
+2. Run cmd for opened directory
+3. Execute command "java -jar stands_state-0.0.1-SNAPSHOT.jar"
+4. Open web-browser
+5. In address bar enter localhost:8080/stands
+
 ## Run from IDE
 
 Configure and run application from Eclipse IDE
