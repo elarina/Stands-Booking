@@ -6,45 +6,58 @@
 <link type="text/css" rel="stylesheet" href="menu.css">
 </head>
 <body>
-<h1>Стенды</h1>
+	<h1>Стенды</h1>
 
-<div class="navbar">
-  <a href="/booking">Бронирование</a>
-  <div class="dropdown">
-    <button class="dropbtn"> Администрирование 
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-content">
-      <a href="/stands">Стенды</a>
-      <a href="/employees">Сотрудники</a>
-    </div>
-  </div> 
-</div>
-	<br/><br/><br/><br/>
-	<form th:action="@{/addStand?add}" method="get">
-		<button style="width:120px;margin-bottom:10px;margin-left:calc(90% - 120px);">Добавить стенд</button>
+	<div class="navbar">
+		<a href="/booking">Бронирование</a>
+		<div class="dropdown">
+			<button class="dropbtn">
+				Администрирование <i class="fa fa-caret-down"></i>
+			</button>
+			<div class="dropdown-content">
+				<a href="/stands">Стенды</a> <a href="/employees">Сотрудники</a>
+			</div>
+		</div>
+	</div>
+	<br />
+	<br />
+	<br />
+	<br />
+	<form class="table-striped-form">
+		<button class="table_button" th:classappend="add_button"
+			th:formaction="@{/addStand?add}" formmethod="get"></button>
+		<button class="table_button" th:classappend="delete_button"
+			type="submit" name="delete" value="Delete"
+			th:formaction="@{?removeStand}" formmethod="post"></button>
+
+		<table class="table-striped">
+			<tr>
+				<th th:classappend="checkbox-column"><input type="checkbox"
+					name="selectAll" id="selectAll"></th>
+				<th>Название</th>
+				<th>IP</th>
+				<th>Имя пользователя</th>
+				<th>Пароль</th>
+
+			</tr>
+			<tr th:each="stand: ${stands}">
+				<td align="center"><input type="checkbox" class="itemCheckbox" name="stand_ids"
+					th:value="${stand.id}" /></td>
+				<td align="center" th:text="${stand.name}"></td>
+				<td align="center" th:text="${stand.ip}"></td>
+				<td align="center" th:text="${stand.username}"></td>
+				<td align="center" th:text="${stand.password}"></td>
+			</tr>
+		</table>
+		<script>
+		  document.getElementById('selectAll').addEventListener('change', function() {
+		    const checkboxes = document.querySelectorAll('.itemCheckbox');
+		    checkboxes.forEach(checkbox => {
+		      checkbox.checked = this.checked;
+		    });
+		  });
+		</script>
 	</form>
-	<form th:action="@{?removeStand}" method="post" >
-	<table style="width:80%;"border="1" align="center">
-		<tr>
-			<th width="5%">Выбрать</th>
-			<th width="25%">Название</th>
-			<th width="25%">IP</th>
-			<th width="25%">Имя пользователя</th>
-			<th width="20%">Пароль</th>
 
-		</tr>
-		<tr th:each="stand: ${stands}">
-			<td align="center"><input type="checkbox" name="stand_ids" th:value="${stand.id}"/></td>
-			<td align="center" th:text="${stand.name}"></td>
-			<td align="center" th:text="${stand.ip}"></td>
-			<td align="center" th:text="${stand.username}"></td>
-			<td align="center" th:text="${stand.password}"></td>
-		</tr>
-	</table>
-	<button style="margin-top:10px;margin-left: 40%;" type="submit" name="cancel" value="Cancel">Сбросить выбор</button> <button style="margin-left: 10px;" type="submit" name="delete" value="Delete">Удалить выбранные</button>
-
-	</form>
-	
 </body>
 </html>
