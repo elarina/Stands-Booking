@@ -79,7 +79,7 @@ Eclipse IDE - https://www.eclipse.org/downloads/
 4. In address bar enter localhost:8080/stands
 
 # Demo
-See [demo/stands_state_demo.mp4](https://elarina.github.io/Stand_State/)
+See [demo](https://elarina.github.io/Stand_State/)
 
 # UI on Figma
 https://www.figma.com/design/igwGeY3MepQ3tgyGH0yTDF/Stands_State?node-id=2-145&m=dev&t=OlU8jcxsskFKiFXl-1
