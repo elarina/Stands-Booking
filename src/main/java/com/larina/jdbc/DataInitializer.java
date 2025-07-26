@@ -50,10 +50,10 @@ public class DataInitializer implements CommandLineRunner {
 		StandsGroup generated = new StandsGroup("Generated");
 		StandsGroup linuxGen = new StandsGroup("Linux Stands");
 		StandsGroup windowsGen = new StandsGroup("Windows Stands");
-		StandsGroup titanStandsLinux = new StandsGroup("Titan Stands");
-		StandsGroup cilkPacStandsLinux = new StandsGroup("CilkPac Stands");
-		StandsGroup titanStandsWindows = new StandsGroup("Titan Stands");
-		StandsGroup cilkPacStandsWindows = new StandsGroup("CilkPac Stands");
+		StandsGroup titanStandsLinux = new StandsGroup("Test1 Stands");
+		StandsGroup cilkPacStandsLinux = new StandsGroup("Test2 Stands");
+		StandsGroup titanStandsWindows = new StandsGroup("Test1 Stands");
+		StandsGroup cilkPacStandsWindows = new StandsGroup("Test2 Stands");
 
 		// groups for real data
 		StandsGroup userDefined = new StandsGroup("User Defined");
@@ -61,11 +61,11 @@ public class DataInitializer implements CommandLineRunner {
 		StandsGroup linux = new StandsGroup("Linux Stands");
 		StandsGroup windows = new StandsGroup("Windows Stands");
 		
-		StandsGroup titanStandsLinuxUD = new StandsGroup("Titan Stands");
-		StandsGroup cilkPacStandsLinuxUD = new StandsGroup("CilkPac Stands");
+		StandsGroup titanStandsLinuxUD = new StandsGroup("Test1 Stands");
+		StandsGroup cilkPacStandsLinuxUD = new StandsGroup("Test2 Stands");
 		
-		StandsGroup titanStandsWindowsUD = new StandsGroup("Titan Stands");
-		StandsGroup cilkPacStandsWindowsUD = new StandsGroup("CilkPac Stands");
+		StandsGroup titanStandsWindowsUD = new StandsGroup("Test1 Stands");
+		StandsGroup cilkPacStandsWindowsUD = new StandsGroup("Test2 Stands");
 		
 		standGroupRepository.saveAll(List.of(main, generated, linuxGen, windowsGen, titanStandsLinux,
 				titanStandsWindows, cilkPacStandsLinux, cilkPacStandsWindows, userDefined, linux, windows,
