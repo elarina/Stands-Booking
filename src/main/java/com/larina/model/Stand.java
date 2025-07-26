@@ -4,6 +4,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -19,26 +21,22 @@ public class Stand {
 	private String username;
 	private String password;
 	
+	@ManyToOne
+	@JoinColumn(name = "group_id")
+	private StandsGroup group;
+	
 	public Stand() {
 		
 	}
 	
-	public Stand(String name, String ip, String username, String password) {
-		super();
+	public Stand(String name, String ip, String username, String password, StandsGroup group) {
 		this.name = name;
 		this.ip = ip;
 		this.username = username;
 		this.password = password;
+		this.group = group;
 	}
 	
-	public Stand(int id, String name, String ip, String username, String password) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.ip = ip;
-		this.username = username;
-		this.password = password;
-	}
 
 	public long getId() {
 		return id;
@@ -77,6 +75,14 @@ public class Stand {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public StandsGroup getGroup() {
+		return group;
+	}
+
+	public void setGroup(StandsGroup group) {
+		this.group = group;
 	}
 	
 	

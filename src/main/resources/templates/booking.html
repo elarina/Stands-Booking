@@ -7,7 +7,7 @@
 </head>
 <body>
 	<div class="navbar">
-		<a href="/booking">Бронирование</a>
+		<div><a href="/booking">Бронирование</a></div>
 		<div class="dropdown">
 			<button class="dropbtn">
 				Администрирование <i class="fa fa-caret-down"></i>
@@ -33,7 +33,7 @@
 	<div class="button-container">
 		<a class="button-container-a" th:each="btn : ${buttons}"
 			th:href="@{${btn.actionUrl}}" th:text="${btn.standName}"
-			th:classappend="${btn.standName == 'Stand Stand Stand 11'} ? 'off' : 'on'">
+			th:classappend="${btn.standName == 'Stand Stand Stand 11'} ? 'off' : (${btn.standName == 'Белка'} ? 'busy' : (${btn.standName == 'Стрелка'} ? 'booked' : 'on'))">
 		</a>
 	</div>
 </body>
