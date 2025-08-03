@@ -86,4 +86,5 @@ https://www.figma.com/design/igwGeY3MepQ3tgyGH0yTDF/Stands_State?node-id=2-145&m
 
 # Usefull links
 Spring Tools Suite install - https://github.com/spring-projects/spring-tools/wiki/Installation
+
 LiveReload for FireFox (плагин для автоматического обновления Web-страниц при измненеии шаблонов в среде разработки) - https://addons.mozilla.org/ru/firefox/addon/livereload-web-extension/
