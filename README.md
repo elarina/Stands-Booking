@@ -47,11 +47,11 @@ Build and run application from Command Line
 4. Open web-browser
 5. In address bar enter localhost:8080/stands
 
-## Run from IDE
+## Run from IDE Eclipse
 
 Configure and run application from Eclipse IDE
 
-### Prerequisites for run application from IDE
+### Prerequisites for run application from IDE Eclipse
 
 Eclipse IDE - https://www.eclipse.org/downloads/
 
