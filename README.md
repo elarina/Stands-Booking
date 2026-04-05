@@ -87,7 +87,7 @@ Eclipse IDE - https://www.eclipse.org/downloads/
 4. In address bar enter localhost:8080/stands
 
 # Demo
-See [demo](https://github.com/elarina/Stands-Booking/blob/main/demo/Stands-Booking-demo-2026-04-05%2018-12-06-430.mp4)
+See [demo](https://elarina.github.io/Stands-Booking/)
 
 # UI design on Figma
 https://www.figma.com/design/igwGeY3MepQ3tgyGH0yTDF/Stands_State?node-id=2-145&m=dev&t=OlU8jcxsskFKiFXl-1
