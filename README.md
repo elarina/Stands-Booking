@@ -47,6 +47,14 @@ Build and run application from Command Line
 4. Open web-browser
 5. In address bar enter localhost:8080/stands
 
+## Run from IDEA
+
+Configure and run application from IDEA
+
+1. Download, install and run IDEA Community.
+2. Clone Repository from IDEA.
+3. Run.
+
 ## Run from IDE Eclipse
 
 Configure and run application from Eclipse IDE
