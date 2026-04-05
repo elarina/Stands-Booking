@@ -46,11 +46,13 @@
 			th:text="${group.groupName}"> </a>
 	</div>
 
-	<div class="button-container">
-		<a class="button-container-a" th:each="btn : ${buttons}"
-			th:href="@{${btn.actionUrl}}" th:text="${btn.standName}"
-			th:classappend="${btn.standName == 'Stand Stand Stand 11'} ? 'off' : (${btn.standName == 'Белка'} ? 'busy' : (${btn.standName == 'Стрелка'} ? 'booked' : 'on'))">
-		</a>
-	</div>
+	<section class="button-container">
+        <a class="button-container-a-tag" th:each="btn : ${buttons}" th:href="@{${btn.actionUrl}}">
+            <div class="to-top">
+                <div class="state-circle" th:classappend="${btn.standName == 'Stand Stand Stand 11'} ? 'off' : (${btn.standName == 'Белка'} ? 'busy' : (${btn.standName == 'Стрелка'} ? 'booked' : 'on'))"></div>
+                <span class="stand-name" th:text="${btn.standName}"></span>
+            </div>
+        </a>
+	</section>
 </body>
 </html>
