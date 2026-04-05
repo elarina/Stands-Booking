@@ -42,8 +42,11 @@
 	<br>
 	<div class="group-container">
 		<a class="group-container-a" th:each="group : ${groups}"
-			th:href="@{${group.actionUrl} + ${group.groupId}}"
-			th:text="${group.groupName}"> </a>
+			th:href="@{${group.actionUrl} + ${group.groupId}}">
+            <div class="to-top">
+                <span class="stand-name" th:text="${group.groupName}"></span>
+            </div>
+        </a>
 	</div>
 
 	<section class="button-container">
