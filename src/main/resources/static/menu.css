@@ -80,7 +80,7 @@ body {
 .group-container-a {
 	display: flex;
 	width: 250px;
-	height: 150px;
+	height: 220px;
 	padding: 20px 20px;
 	align-items: center;
 	justify-content: center;
@@ -180,7 +180,7 @@ body {
 .button-container-a-tag {
 	display: flex;
 	width: 250px;
-	height: 150px;
+	height: 220px;
 	padding: 20px 20px;
 	align-items: top;
 	justify-content: left;
