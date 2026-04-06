@@ -89,8 +89,8 @@ Eclipse IDE - https://www.eclipse.org/downloads/
 # Demo
 See [demo](https://elarina.github.io/Stands-Booking/)
 
-# UI design on Figma
-https://www.figma.com/design/igwGeY3MepQ3tgyGH0yTDF/Stands_State?node-id=2-145&m=dev&t=OlU8jcxsskFKiFXl-1
+# UI design
+[Behance](https://www.behance.net/gallery/247031037/Figma-sistema-bronirovanija-stendov)
 
 # Usefull links
 Spring Tools Suite install - https://github.com/spring-projects/spring-tools/wiki/Installation
