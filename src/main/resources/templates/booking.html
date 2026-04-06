@@ -6,8 +6,10 @@
 <link rel="stylesheet" href="menu.css" />
 </head>
 <body>
-	<h1 th:text="${param.source[0] == 'stands' ? 'Бронирование / Стенды' : 'Бронирование / Группы '}">Бронирование</h1>
-	<div class="navbar">
+    <div class="header">
+        <h1 th:text="${param.source[0] == 'stands' ? 'Бронирование / Стенды' : 'Бронирование / Группы '}">Бронирование</h1>
+    </div>
+        <div class="navbar">
 		<div class="dropdown">
 			<button class="dropbtn">
 				Бронирование <i class="fa fa-caret-down"></i>
